@@ -805,9 +805,9 @@ ifeq (,$(filter true, $(TARGET_NO_KERNEL) $(TARGET_NO_RECOVERY)))
 INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
 
 ifneq ($(TARGET_RECOVERY_INITRC),)
-  recovery_initrc := $(call project-path-for,recovery)/etc/init.rc
-else
   recovery_initrc := $(TARGET_RECOVERY_INITRC)
+else
+  recovery_initrc := $(call project-path-for,recovery)/etc/init.rc
 endif
 
 recovery_sepolicy := $(call intermediates-dir-for,ETC,sepolicy.recovery)/sepolicy.recovery
